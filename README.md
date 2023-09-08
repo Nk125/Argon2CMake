@@ -1,4 +1,6 @@
-## Argon2CMake
+## Argon2CMake (WIP)
+
+**PLEASE DON'T CLONE UNTIL I COMPLETELY FINISH IT, for some reason in Windows works but i'm checking an issue on Unix that argon2.c just don't find argon2.h header, please keep an eye for updates soon!**
 
 Just a wrapper of Argon2 in CMake, i was surprised that nobody did it until now i'm coding it, or just i'm too bad searching
 
@@ -31,7 +33,7 @@ FetchContent_MakeAvailable(Argon2CMake)
 And then
 
 ```cmake
-target_link_libraries(myexe Argon2)
+target_link_libraries(myexe PRIVATE Argon2)
 ```
 
 You'll have in your project Argon2!
