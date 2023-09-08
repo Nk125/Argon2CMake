@@ -21,7 +21,7 @@ include(FetchContent)
 
 FetchContent_Declare(
     Argon2CMake
-    GIT_REPOSITORY xxx
+    GIT_REPOSITORY https://github.com/Nk125/Argon2CMake
     GIT_TAG main
 )
 
