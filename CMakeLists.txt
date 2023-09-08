@@ -22,11 +22,11 @@ endif()
 
 set(Argon2SrcPath "${argon2_SOURCE_DIR}/src")
 
-add_library(Argon2CMake STATIC
+add_library(Argon2CMake STATIC    
     "${Argon2SrcPath}/argon2.c"
     "${Argon2SrcPath}/core.c"
     "${Argon2SrcPath}/encoding.c"
-    "${Argon2SrcPath}/thread.c"
+    "${Argon2SrcPath}/thread.c"        
     "${Argon2SrcPath}/blake2/blake2b.c"
 )
 
@@ -36,10 +36,14 @@ if (WIN32)
     target_compile_definitions(Argon2CMake PRIVATE _CRT_SECURE_WARNINGS)
 endif()
 
-if (ARGON2_ASM_CODE)
+if (ARGON2_ASM_CODE)    
     target_sources(Argon2CMake PUBLIC "${Argon2SrcPath}/opt.c")
+
+    message(STATUS "Argon2: Building with optimized code")
 else()
     target_sources(Argon2CMake PUBLIC "${Argon2SrcPath}/ref.c")
+
+    message(STATUS "Argon2: Building with reference code")
 endif()
 
 message(STATUS "Argon2: Built succesfully")
