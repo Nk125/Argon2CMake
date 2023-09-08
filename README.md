@@ -6,11 +6,11 @@ Just a wrapper of Argon2 in CMake, i was surprised that nobody did it until now 
 
 ### What it does
 
-First of all, we have the next table of things to do:
+The CMakeLists file:
 
-1. Download the repo of [Argon2](https://github.com/P-H-C/phc-winner-argon2) 
+1. Downloads the repo of [Argon2](https://github.com/P-H-C/phc-winner-argon2) 
 
-2. Index include directory and all source files
+2. Indexes include directory and all source files
 
 3. Makes a bundle of all into a **static library**
 
