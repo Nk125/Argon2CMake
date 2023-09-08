@@ -16,9 +16,9 @@ FetchContent_Declare(
 
 FetchContent_GetProperties(Argon2DW)
 
-message(STATUS "Argon2: Downloading")
-
 if (NOT ${argon2dw_POPULATED})
+    message(STATUS "Argon2: Populating")
+
     FetchContent_Populate(Argon2DW)
 endif()
 
@@ -48,4 +48,4 @@ else()
     message(STATUS "Argon2: Building with reference code")
 endif()
 
-message(STATUS "Argon2: Built succesfully")
+message(STATUS "Argon2: Configured succesfully")
