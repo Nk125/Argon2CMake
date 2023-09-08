@@ -32,7 +32,7 @@ add_library(Argon2 STATIC
     "${Argon2SrcPath}/blake2/blake2b.c"
 )
 
-target_include_directories(Argon2 PUBLIC $<BUILD_INTERFACE:${argon2_SOURCE_DIR}/include>)
+target_include_directories(Argon2 PUBLIC ${argon2_SOURCE_DIR}/include ${Argon2SrcPath})
 
 if (WIN32)
     target_compile_definitions(Argon2 PRIVATE _CRT_SECURE_WARNINGS)
