@@ -40,12 +40,12 @@ You'll have in your project Argon2!
 
 Maybe you'll want to use the reference version (in plain C) of Argon2 or the optimized version (with assembly optimizations, and default version compiled), so there are some options you want to check
 
-* ARGON2_USE_ASM_CODE (Default: true)
+* `ARGON2_USE_ASM_CODE` (Default: true)
 
-Use the optimized assembly code for some CPUs, if set to false the library will compile with reference C plain code
+    Use the optimized assembly code for some CPUs, if set to false the library will compile with reference C plain code
 
-This is useful with ARM CPUs, that aren't covered by the assembly optimizations in Argon2
+    Setting to false is useful with ARM CPUs, that aren't covered by the assembly optimizations in Argon2
 
-* ARGON2_USE_THREADS (Default: true)
+* `ARGON2_USE_THREADS` (Default: true)
 
-Enable the threading Argon2 built-in capability, you can disable or enable in order of your needs
+    Enable the threading Argon2 built-in capability, you can disable or enable in order of your needs
