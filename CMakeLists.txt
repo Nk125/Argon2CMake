@@ -48,7 +48,7 @@ if (ARGON2_USE_THREADS)
 else()
     message(STATUS "Argon2: Disabled threading")
 
-    target_compile_definitions(ARGON2_NO_THREADS)
+    target_compile_definitions(Argon2 PRIVATE ARGON2_NO_THREADS)
 endif()
 
 if (ARGON2_USE_ASM_CODE)
