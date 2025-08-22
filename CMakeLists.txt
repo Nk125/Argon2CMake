@@ -8,21 +8,21 @@ option(ARGON2_USE_THREADS "Compile with threading capability" ON)
 
 include("FetchContent")
 
+message(STATUS "Downloading Argon2 from the Github repository")
+
 FetchContent_Declare(
-    Argon2DW
+    Argon2GithubRepoDownload
     GIT_REPOSITORY https://github.com/P-H-C/phc-winner-argon2
     GIT_TAG master
 )
 
-FetchContent_GetProperties(Argon2DW)
+FetchContent_MakeAvailable(Argon2GithubRepoDownload)
 
-if (NOT ${argon2dw_POPULATED})
-    message(STATUS "Argon2: Populating")
+set(Argon2ClonedPath "${argon2githubrepodownload_SOURCE_DIR}")
 
-    FetchContent_Populate(Argon2DW)
-endif()
+set(Argon2SrcPath "${Argon2ClonedPath}/src")
 
-set(Argon2SrcPath "${argon2dw_SOURCE_DIR}/src")
+set(Argon2IncludePath "${Argon2ClonedPath}/include")
 
 add_library(Argon2 STATIC    
     "${Argon2SrcPath}/argon2.c"
@@ -31,7 +31,7 @@ add_library(Argon2 STATIC
     "${Argon2SrcPath}/blake2/blake2b.c"
 )
 
-target_include_directories(Argon2 PUBLIC "${argon2dw_SOURCE_DIR}/include" PRIVATE "${Argon2SrcPath}")
+target_include_directories(Argon2 PUBLIC "${Argon2IncludePath}" PRIVATE "${Argon2SrcPath}")
 
 if (WIN32)
     target_compile_definitions(Argon2 PRIVATE _CRT_SECURE_WARNINGS)
@@ -62,3 +62,4 @@ else()
 endif()
 
 message(STATUS "Argon2: Configured succesfully")
+
