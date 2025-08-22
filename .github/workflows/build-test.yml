@@ -20,8 +20,8 @@ jobs:
         c_compiler: [gcc, clang, cl]
         flags: 
           - "-DARGON2_USE_ASM_CODE=OFF"
-          - "-DDARGON2_USE_THREADS=OFF"
-          - "-DDARGON2_USE_THREADS=OFF -DARGON2_USE_ASM_CODE=OFF"
+          - "-DARGON2_USE_THREADS=OFF"
+          - "-DARGON2_USE_THREADS=OFF -DARGON2_USE_ASM_CODE=OFF"
         include:
           - os: windows-latest
             c_compiler: cl
