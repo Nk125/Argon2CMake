@@ -22,6 +22,7 @@ jobs:
           - "-DARGON2_USE_ASM_CODE=OFF"
           - "-DARGON2_USE_THREADS=OFF"
           - "-DARGON2_USE_THREADS=OFF -DARGON2_USE_ASM_CODE=OFF"
+          - "-DARGON2_USE_THREADS=ON -DARGON2_USE_ASM_CODE=ON"
         include:
           - os: windows-latest
             c_compiler: cl
